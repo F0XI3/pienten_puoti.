@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pienten puoti Galleria</title>
+<link rel="stylesheet" href="styles/header.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+<style>
+
+body {
+  background-color: rgb(60 145 178);
+  margin: 0;
+  text-align: center;
+}
+
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #000;
+  width: 180px;
+  max-height: 234px;
+  background-color: rgb(109 157 81);  /*  background color of the gallery */
+  margin-bottom: 35px; /* Add this line to add space between rows */
+  display: inline-block;
+  border-radius: 5px;
+}
+
+
+
+
+div.gallery:hover {
+  border: 1px solid #fff;
+  box-shadow: 0 0 20px #000;
+  transform: scale(1.05);
+}
+
+div.gallery img {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+  
+
+  
+ 
+
+  <div style="width: 100%;display: flex;align-items: center;justify-content: center;">
+    <form onsubmit="Search();return false" style="width: 100%;">
+      <input onkeyup="Search()" autocomplete="off" type="text" placeholder="Etsi. esim. musta huppari" style="text-align: center; border: 1px solid black; display: inline-block; width: 90%;height: 50px;font-size: 30px;margin-top: 50px;margin-bottom: 50px;border-radius: 10px" autofocus>
+      <input type="submit" style="display: none;">
+  </form>
+  </div>
+
+  <div id="Gallery" style="margin: 0;width: 100%;text-align: center;"></div>
+
+  <script type="text/javascript" src="json.js"></script>
+  <script>
+  let AllItems=[];
+  gallery=document.getElementById("Gallery");
+
+
+  function Make(source, desctxt, tags){//function to create an image
+    div = document.createElement('div');
+    div.className = 'gallery';
+    div.setAttribute("tags",tags)
+
+    a = document.createElement('a');
+    a.target = '_blank';
+    a.href = source
+
+    img = document.createElement('img');
+    img.src = source;
+    img.className="image";
+    img.width=600;
+    img.height=400;
+
+    a.appendChild(img);
+    div.appendChild(a);
+
+    desc = document.createElement('div');
+    desc.className = 'desc';
+    desc.textContent = desctxt;
+
+    div.appendChild(desc);
+
+    gallery.appendChild(div);
+    AllItems.push(div);
+  }
+
+
+  for (let i = 0; i < json.length; i++) {try{
+    
+    //for (j=0; j!=50;j++){Make(json[i].src, json[i].desc, json[i].tags);}//creates every element 100 times :D. For Testing
+    Make(json[i].src, json[i].desc, json[i].tags);
+  }
+    catch{console.error(json[i])}}
+
+  //console.log(AllItems)
+
+  function Search(){
+    words=document.querySelector("div>form>input[type=text]").value.split(" ")
+    AllItems.forEach(elm=>{if (!(words.every(item=>elm.getAttribute("tags").includes(item.toLowerCase())))){elm.style.display="none"}else{elm.style.display=""}})
+  }
+  </script>
+
+</body>
+</html>

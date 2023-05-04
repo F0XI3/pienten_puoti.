@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+    <title>Pienten Puoti</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <html lang="fi">
+    
+    <div class="box" style="background-color: #538faf00;height: 40px;position: fixed;top:0;">
+      <div style="display: flex;justify-content: center;align-items: right;">
+
+      </div>
+        <div class="dropdown">
+          <button class="dropbtn">valikko</button>
+            <div class="dropdown-content">
+              <a onclick="openi(document.getElementById('gallery'))">Galleria</a>
+              <a onclick="openi(mapelement)">Kartta</a>
+              <a href="#QAA">Kysymyksiä</a>
+              <a onclick="openi(document.getElementById('info'))">muuta tietoa</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--pöllö-->
+    <div style="display: flex; justify-content: space-between; align-items: center;margin-top: 40px;background-color: #538faf;">
+      <div style="width: 55%;text-align: center;">
+        <img src="images/logo.jpg" width="50%" style="border-radius: 10px;">
+        <p style="margin-bottom: 0; font-size: 7vw;margin-top: 0;">Pue lapsesi tyylikkäästi ja kestävästi.</p>
+      </div>
+      <img style="margin-left: 5px; border-radius: 20px 0 0 20px; float: right;width: 45%;" src="images/kello.jpg">
+    </div>
+
+<div class="box" style="height: 100px;background: linear-gradient(180deg, #538faf, #206F9F);"></div>
+
+<!--kenkä-->
+    <div style="display: flex; justify-content: space-between; align-items: center;background-color: #206F9F;">
+      <img style="margin-right: 5px; border-radius: 0 20px 20px 0;width: 45%;" src="images/shoes.jpg">
+      <div style="width: 55%;float: right;text-align: center;">
+        <p style="margin-bottom: 0; font-size: 5vw;">Budjettiystävälliset vaihtoehdot.</p>
+        <p style="color: #c8c8c8; font-size: 3vw;">Uskomme, että jokainen lapsi ansaitsee käyttää muodikkaita vaatteita, jotka ovat myös edullisia. Lastenvaatemallistomme on hinnoiteltu vanhempien budjetit huomioiden.</p>
+      </div>
+    </div>
+
+<div class="box" style="height: 100px;background: linear-gradient(0deg, darkcyan, #206F9F);"></div>
+
+    <!--nopat?-->
+    <div  class="test" style="display: flex; justify-content: space-between; align-items: center;background-color: darkcyan;">
+      <div style="width: 55%;text-align: center;">
+        <p style=" font-size: 5vw;">Ympäristötietoinen</p>
+        <p style="color: #d0d0d0; font-size: 3vw;">Vaatteemme on valmistettu ympäristöystävällisistä materiaaleista, jotka ovat hellävaraisia lapsesi iholle ja ympäristölle.</p>
+      </div>
+      <img style="margin-left: 5px; border-radius: 20px 0 0 20px; float: right;width: 45%;" src="images/ymparistotietoinen.jpg">
+    </div>
+
+
+<div class="box" style="height: 100px;background: linear-gradient(180deg, darkcyan, #779c5a);"></div>
+
+
+    <!--lapset-->
+    <div style="display: flex; justify-content: space-between; align-items: center;background-color: #779c5a;">
+      <img style="margin-right: 5px; border-radius: 0 20px 20px 0;width: 45%;" src="images/kauniitavaatteita.jpg">
+      <div style="width: 55%;float: right;text-align: center;">
+        <p style="margin-bottom: 0; font-size: 5vw;">Kauniita vaatteita.</p>
+        <p style="color: #d0d0d0; font-size: 3vw;">Varastossamme on kauniita vaatteita, joita lapsesi haluaisi käyttää melkein joka päivä. Klassisesta moderniin tyyliin, meillä on vaatekaappi pikkuisillesi joka tilanteeseen.</p>
+      </div>
+    </div>
+
+    <!--kysymyksiä-->
+    <div class="box" style="background: linear-gradient(180deg, #779c5a, #538faf);height: 200px;"></div>
+    <div id="QAA" class="box" style="background-color: #538faf;">
+      
+      <div style="width: 100%;text-align: center;">
+        <p style="margin-bottom: 0; font-size: 8vw;">Kysymyksiä</p>
+
+        <hr>
+        
+        <p style="font-size: 4vw;">Paljonko se maksaa?</p>
+        <p style="color: #d0d0d0; font-size: 3vw;">Anna potentiaalisille asiakkaillesi yleiskatsaus siitä, kuinka paljon tuotteet maksaisivat.</p>
+        
+        <hr>
+
+        <p style="font-size: 4vw;">Kenelle Pienten Puoti on tarkoitettu?</p>
+        <p style="color: #d0d0d0; font-size: 3vw;">Kuvaile ensisijainen käyttäjä/asiakas, jolle Pienten Puoti on tarkoitettu. Sisällytä myös joitain etuja, jotka voivat liittyä erityisesti tähän asiakaskuntaan.</p>
+        
+        <hr>
+
+        <p style="font-size: 4vw;">Mikä tekee Pienten Puodista erilaisen?</p>
+        <p style="color: #d0d0d0; font-size: 3vw;">Sisällytä yksityiskohtia, jotka antavat kilpailuetua markkinoiden muihin tuotteisiin nähden.</p>
+        
+      
+      </div>
+
+    </div>
+
+    <!--footer-->
+    <div class="box" style="background: linear-gradient(180deg, #538faf, #206F9F);height: 100px;"></div>
+    <div id="other" class="box" style="background-color: #206F9F;padding-bottom: 50px;">
+      <!--
+      <div style="width: 100%;text-align: center;">
+        <p class="info" style="font-size: 4vw;">puhelin: <a href="tel: +358 44 3130560">+358 44 3130560</a></p>
+      </div>
+      -->
+    </div>
+
+<!--other stuff-->
+<div id="map" style="padding:10px;display: none; position:fixed;top: 0;left: 0;right: 0;bottom: 0;"><button style="position: absolute;top: 0;right: 0;" onclick="closei(this.parentElement)">sulje</button><iframe style="box-shadow:0 0 20px black; height:100%;width: 100%;border: none;border-radius: 10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7694.336825580963!2d23.85120454142368!3d61.175832617480054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468eede2722ea711%3A0x63fd2a5e6dbac49c!2sPienten%20Puoti!5e0!3m2!1sfi!2sfi!4v1680592050559!5m2!1sfi!2sfi" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+<div id="info" style="display: none;box-shadow: 0 0 20px black;margin:10px;position:fixed;top: 0;left: 0;right: 0;bottom: 0;background-color:cadetblue;border-radius: 10px;">
+  <button style="position: absolute;top: 0;right: 0;" onclick="closei(this.parentElement)">sulje</button>
+  <div style="width: 100%;height: 100%;text-align: center;">
+    <!--
+    <p class="info" style="font-size: 4vw;">puhelin: <a href="tel: +358 44 3130560">+358 44 3130560</a></p>
+    <p class="info" style="font-size: 4vw;">Email: <a href="mailto: annemari.oksman@gmail.com">annemari.oksman@gmail.com</a></p>
+    -->
+  </div>
+</div>
+
+
+<div id="gallery" style="display: none;margin:10px;position:fixed;top: 0;left: 0;right: 0;bottom: 0;">
+  <button style="position: absolute;top: 0;right: 0;" onclick="closei(this.parentElement)">sulje</button>
+  <iframe src="gallery.html" frameborder="0" style="width: 100%;height: 100%;border-radius: 10px;box-shadow: 0 0 20px black;"></iframe>
+</div>
+
+  </html>
+</body>
+
+<style>
+body{background-color: #538faf;margin: 0;}
+.box{width: 100%;margin: 0; display: flex;align-items: center;justify-content: space-between;}
+p{font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
+hr{border: none;background-color: #fff;width: 95%; height: 2px;border-radius: 20px;}
+
+.info{color: white;}
+.info a{color:#5df}
+
+.dropbtn {
+  background-color: #444;
+  color: white;
+  height: 40px;
+  aspect-ratio: 2/1;
+
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: .1s;
+  border-radius: 0 0 0 15px;}
+
+.dropdown {position:relative;display:inline-block;}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:0;
+  background-color: #ddd;
+  min-width: 200px;
+  text-align:left;
+  z-index: 1;}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition:.1s;}
+
+.dropdown-content:last-child{border-radius: 15px 0 0 15px;}
+.dropdown-content a:hover::before{content: ">> ";}
+.dropdown-content a:hover {background-color: #555; color:#fff;transform:scale(1.1) translateX(-5%);border-radius: 15px 0 0 15px;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color:#666;border-radius: 15px 0 0 0;}
+
+@media screen and (min-width: 1000px){p{font-weight: 100;}}
+
+</style>
+
+<script>
+mapelement=document.getElementById("map")
+function openi(obj){obj.style.display="block";document.body.style.overflow="hidden"}
+function closei(obj){obj.style.display="none";document.body.style.overflow=""}
+</script>
